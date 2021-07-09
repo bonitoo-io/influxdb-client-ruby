@@ -1,6 +1,0 @@
-ignore:
-  - "lib/influxdb2/client/models/**/*"
-  - "lib/influxdb2/apis/generated/*.rb"
-  - "lib/influxdb2/apis/generated/**/*"
-  - "test/influxdb/**/*"
-  - "apis/test/influxdb2/**/*"

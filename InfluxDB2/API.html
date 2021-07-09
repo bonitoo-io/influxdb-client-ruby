@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: InfluxDB2::API
+  
+    &mdash; Documentation by YARD 0.9.26
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "InfluxDB2::API";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (A)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span>
+     &raquo; 
+    <span class="title">API</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: InfluxDB2::API
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>apis/lib/influxdb2/apis/generated/api_error.rb<span class="defines">,<br />
+  apis/lib/influxdb2/apis/api.rb,<br /> apis/lib/influxdb2/apis/version.rb,<br /> apis/lib/influxdb2/apis/generated/api_client.rb,<br /> apis/lib/influxdb2/apis/generated/models/user.rb,<br /> apis/lib/influxdb2/apis/generated/models/label.rb,<br /> apis/lib/influxdb2/apis/generated/models/links.rb,<br /> apis/lib/influxdb2/apis/generated/models/users.rb,<br /> apis/lib/influxdb2/apis/generated/api/users_api.rb,<br /> apis/lib/influxdb2/apis/generated/configuration.rb,<br /> apis/lib/influxdb2/apis/generated/models/bucket.rb,<br /> apis/lib/influxdb2/apis/generated/api/labels_api.rb,<br /> apis/lib/influxdb2/apis/generated/models/buckets.rb,<br /> apis/lib/influxdb2/apis/generated/api/buckets_api.rb,<br /> apis/lib/influxdb2/apis/generated/models/resource.rb,<br /> apis/lib/influxdb2/apis/generated/models/permission.rb,<br /> apis/lib/influxdb2/apis/generated/models/bucket_links.rb,<br /> apis/lib/influxdb2/apis/generated/models/label_update.rb,<br /> apis/lib/influxdb2/apis/generated/models/organization.rb,<br /> apis/lib/influxdb2/apis/generated/models/authorization.rb,<br /> apis/lib/influxdb2/apis/generated/models/label_mapping.rb,<br /> apis/lib/influxdb2/apis/generated/models/organizations.rb,<br /> apis/lib/influxdb2/apis/generated/models/user_response.rb,<br /> apis/lib/influxdb2/apis/generated/api/organizations_api.rb,<br /> apis/lib/influxdb2/apis/generated/models/authorizations.rb,<br /> apis/lib/influxdb2/apis/generated/models/label_response.rb,<br /> apis/lib/influxdb2/apis/generated/models/resource_owner.rb,<br /> apis/lib/influxdb2/apis/generated/models/retention_rule.rb,<br /> apis/lib/influxdb2/apis/generated/api/authorizations_api.rb,<br /> apis/lib/influxdb2/apis/generated/models/labels_response.rb,<br /> apis/lib/influxdb2/apis/generated/models/resource_member.rb,<br /> apis/lib/influxdb2/apis/generated/models/resource_owners.rb,<br /> apis/lib/influxdb2/apis/generated/models/resource_members.rb,<br /> apis/lib/influxdb2/apis/generated/models/organization_links.rb,<br /> apis/lib/influxdb2/apis/generated/models/password_reset_body.rb,<br /> apis/lib/influxdb2/apis/generated/models/post_bucket_request.rb,<br /> apis/lib/influxdb2/apis/generated/models/user_response_links.rb,<br /> apis/lib/influxdb2/apis/generated/models/authorization_all_of.rb,<br /> apis/lib/influxdb2/apis/generated/models/label_create_request.rb,<br /> apis/lib/influxdb2/apis/generated/models/resource_owner_all_of.rb,<br /> apis/lib/influxdb2/apis/generated/models/resource_member_all_of.rb,<br /> apis/lib/influxdb2/apis/generated/models/resource_members_links.rb,<br /> apis/lib/influxdb2/apis/generated/models/post_organization_request.rb,<br /> apis/lib/influxdb2/apis/generated/models/authorization_all_of_links.rb,<br /> apis/lib/influxdb2/apis/generated/models/authorization_post_request.rb,<br /> apis/lib/influxdb2/apis/generated/models/patch_organization_request.rb,<br /> apis/lib/influxdb2/apis/generated/models/authorization_update_request.rb</span>
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>#Influx OSS API Service</p>
+
+<p>#No description provided (generated by Openapi Generator <a href="https://github.com/openapitools/openapi-generator">github.com/openapitools/openapi-generator</a>)</p>
+
+<p>The version of the OpenAPI document: 2.0.0</p>
+
+<p>Generated by: <a href="https://openapi-generator.tech">openapi-generator.tech</a></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="API/ApiClient.html" title="InfluxDB2::API::ApiClient (class)">ApiClient</a></span>, <span class='object_link'><a href="API/ApiError.html" title="InfluxDB2::API::ApiError (class)">ApiError</a></span>, <span class='object_link'><a href="API/Authorization.html" title="InfluxDB2::API::Authorization (class)">Authorization</a></span>, <span class='object_link'><a href="API/AuthorizationAllOf.html" title="InfluxDB2::API::AuthorizationAllOf (class)">AuthorizationAllOf</a></span>, <span class='object_link'><a href="API/AuthorizationAllOfLinks.html" title="InfluxDB2::API::AuthorizationAllOfLinks (class)">AuthorizationAllOfLinks</a></span>, <span class='object_link'><a href="API/AuthorizationPostRequest.html" title="InfluxDB2::API::AuthorizationPostRequest (class)">AuthorizationPostRequest</a></span>, <span class='object_link'><a href="API/AuthorizationUpdateRequest.html" title="InfluxDB2::API::AuthorizationUpdateRequest (class)">AuthorizationUpdateRequest</a></span>, <span class='object_link'><a href="API/Authorizations.html" title="InfluxDB2::API::Authorizations (class)">Authorizations</a></span>, <span class='object_link'><a href="API/AuthorizationsApi.html" title="InfluxDB2::API::AuthorizationsApi (class)">AuthorizationsApi</a></span>, <span class='object_link'><a href="API/Bucket.html" title="InfluxDB2::API::Bucket (class)">Bucket</a></span>, <span class='object_link'><a href="API/BucketLinks.html" title="InfluxDB2::API::BucketLinks (class)">BucketLinks</a></span>, <span class='object_link'><a href="API/Buckets.html" title="InfluxDB2::API::Buckets (class)">Buckets</a></span>, <span class='object_link'><a href="API/BucketsApi.html" title="InfluxDB2::API::BucketsApi (class)">BucketsApi</a></span>, <span class='object_link'><a href="API/Client.html" title="InfluxDB2::API::Client (class)">Client</a></span>, <span class='object_link'><a href="API/Configuration.html" title="InfluxDB2::API::Configuration (class)">Configuration</a></span>, <span class='object_link'><a href="API/Label.html" title="InfluxDB2::API::Label (class)">Label</a></span>, <span class='object_link'><a href="API/LabelCreateRequest.html" title="InfluxDB2::API::LabelCreateRequest (class)">LabelCreateRequest</a></span>, <span class='object_link'><a href="API/LabelMapping.html" title="InfluxDB2::API::LabelMapping (class)">LabelMapping</a></span>, <span class='object_link'><a href="API/LabelResponse.html" title="InfluxDB2::API::LabelResponse (class)">LabelResponse</a></span>, <span class='object_link'><a href="API/LabelUpdate.html" title="InfluxDB2::API::LabelUpdate (class)">LabelUpdate</a></span>, <span class='object_link'><a href="API/LabelsApi.html" title="InfluxDB2::API::LabelsApi (class)">LabelsApi</a></span>, <span class='object_link'><a href="API/LabelsResponse.html" title="InfluxDB2::API::LabelsResponse (class)">LabelsResponse</a></span>, <span class='object_link'><a href="API/Links.html" title="InfluxDB2::API::Links (class)">Links</a></span>, <span class='object_link'><a href="API/Organization.html" title="InfluxDB2::API::Organization (class)">Organization</a></span>, <span class='object_link'><a href="API/OrganizationLinks.html" title="InfluxDB2::API::OrganizationLinks (class)">OrganizationLinks</a></span>, <span class='object_link'><a href="API/Organizations.html" title="InfluxDB2::API::Organizations (class)">Organizations</a></span>, <span class='object_link'><a href="API/OrganizationsApi.html" title="InfluxDB2::API::OrganizationsApi (class)">OrganizationsApi</a></span>, <span class='object_link'><a href="API/PasswordResetBody.html" title="InfluxDB2::API::PasswordResetBody (class)">PasswordResetBody</a></span>, <span class='object_link'><a href="API/PatchOrganizationRequest.html" title="InfluxDB2::API::PatchOrganizationRequest (class)">PatchOrganizationRequest</a></span>, <span class='object_link'><a href="API/Permission.html" title="InfluxDB2::API::Permission (class)">Permission</a></span>, <span class='object_link'><a href="API/PostBucketRequest.html" title="InfluxDB2::API::PostBucketRequest (class)">PostBucketRequest</a></span>, <span class='object_link'><a href="API/PostOrganizationRequest.html" title="InfluxDB2::API::PostOrganizationRequest (class)">PostOrganizationRequest</a></span>, <span class='object_link'><a href="API/Resource.html" title="InfluxDB2::API::Resource (class)">Resource</a></span>, <span class='object_link'><a href="API/ResourceMember.html" title="InfluxDB2::API::ResourceMember (class)">ResourceMember</a></span>, <span class='object_link'><a href="API/ResourceMemberAllOf.html" title="InfluxDB2::API::ResourceMemberAllOf (class)">ResourceMemberAllOf</a></span>, <span class='object_link'><a href="API/ResourceMembers.html" title="InfluxDB2::API::ResourceMembers (class)">ResourceMembers</a></span>, <span class='object_link'><a href="API/ResourceMembersLinks.html" title="InfluxDB2::API::ResourceMembersLinks (class)">ResourceMembersLinks</a></span>, <span class='object_link'><a href="API/ResourceOwner.html" title="InfluxDB2::API::ResourceOwner (class)">ResourceOwner</a></span>, <span class='object_link'><a href="API/ResourceOwnerAllOf.html" title="InfluxDB2::API::ResourceOwnerAllOf (class)">ResourceOwnerAllOf</a></span>, <span class='object_link'><a href="API/ResourceOwners.html" title="InfluxDB2::API::ResourceOwners (class)">ResourceOwners</a></span>, <span class='object_link'><a href="API/RetentionRule.html" title="InfluxDB2::API::RetentionRule (class)">RetentionRule</a></span>, <span class='object_link'><a href="API/User.html" title="InfluxDB2::API::User (class)">User</a></span>, <span class='object_link'><a href="API/UserResponse.html" title="InfluxDB2::API::UserResponse (class)">UserResponse</a></span>, <span class='object_link'><a href="API/UserResponseLinks.html" title="InfluxDB2::API::UserResponseLinks (class)">UserResponseLinks</a></span>, <span class='object_link'><a href="API/Users.html" title="InfluxDB2::API::Users (class)">Users</a></span>, <span class='object_link'><a href="API/UsersApi.html" title="InfluxDB2::API::UsersApi (class)">UsersApi</a></span>
+    
+  
+</p>
+
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="VERSION-constant" class="">VERSION =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'><span class='object_link'><a href="../InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../InfluxDB2.html#VERSION-constant" title="InfluxDB2::VERSION (constant)">VERSION</a></span></span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+
+
+</div>
+
+      <div id="footer">
+  Generated on Fri Jul  9 06:45:45 2021 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.26 (ruby-2.6.8).
+</div>
+
+    </div>
+  </body>
+</html>

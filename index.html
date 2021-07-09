@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.9.26
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "README";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><div id='filecontents'>
+<h1 id="label-influxdb-client-ruby">influxdb-client-ruby</h1>
+
+<p><a href="https://circleci.com/gh/influxdata/influxdb-client-ruby"><img src="https://circleci.com/gh/influxdata/influxdb-client-ruby.svg?style=svg"></a> <a href="https://codecov.io/gh/influxdata/influxdb-client-ruby"><img src="https://codecov.io/gh/influxdata/influxdb-client-ruby/branch/master/graph/badge.svg"></a> <a href="https://badge.fury.io/rb/influxdb-client"><img src="https://badge.fury.io/rb/influxdb-client.svg"></a> <a href="https://github.com/influxdata/influxdb-client-ruby/blob/master/LICENSE"><img src="https://img.shields.io/github/license/influxdata/influxdb-client-ruby.svg"></a> <a href="https://github.com/influxdata/influxdb-client-ruby/issues"><img src="https://img.shields.io/github/issues-raw/influxdata/influxdb-client-ruby.svg"></a> <a href="https://github.com/influxdata/influxdb-client-ruby/pulls"><img src="https://img.shields.io/github/issues-pr-raw/influxdata/influxdb-client-ruby.svg"></a> <a href="https://www.influxdata.com/slack"><img src="https://img.shields.io/badge/slack-join_chat-white.svg?logo=slack&style=social"></a></p>
+
+<p>This repository contains the reference Ruby client for the InfluxDB 2.0.</p>
+
+<h4 id="label-Note-3A+Use+this+client+library+with+InfluxDB+2.x+and+InfluxDB+1.8-2B+-28see+details-29.+For+connecting+to+InfluxDB+1.7+or+earlier+instances-2C+use+the+influxdb-ruby+client+library.">Note: Use this client library with InfluxDB 2.x and InfluxDB 1.8+ (<a href="#influxdb-18-api-compatibility">see details</a>). For connecting to InfluxDB 1.7 or earlier instances, use the <a href="https://github.com/influxdata/influxdb-ruby">influxdb-ruby</a> client library.</h4>
+<ul><li>
+<p><a href="#features">Features</a></p>
+</li><li>
+<p><a href="#installation">Installation</a></p>
+<ul><li>
+<p><a href="#install-the-gem">Install the Gem</a></p>
+</li></ul>
+</li><li>
+<p><a href="#usage">Usage</a></p>
+<ul><li>
+<p><a href="#creating-a-client">Creating a client</a></p>
+</li><li>
+<p><a href="#writing-data">Writing data</a></p>
+</li><li>
+<p><a href="#queries">Querying data</a></p>
+</li><li>
+<p><a href="#delete-data">Delete data</a></p>
+</li><li>
+<p><a href="#management-api">Management API</a></p>
+</li></ul>
+</li><li>
+<p><a href="#advanced-usage">Advanced Usage</a></p>
+<ul><li>
+<p><a href="#default-tags">Default Tags</a></p>
+</li></ul>
+</li><li>
+<p><a href="#contributing">Contributing</a></p>
+</li><li>
+<p><a href="#license">License</a></p>
+</li></ul>
+
+<h2 id="label-Features">Features</h2>
+
+<p>InfluxDB 2.0 client consists of two packages</p>
+<ul><li>
+<p><code>influxdb-client</code></p>
+<ul><li>
+<p>Querying data using the Flux language</p>
+</li><li>
+<p>Writing data</p>
+<ul><li>
+<p>batched in chunks on background</p>
+</li><li>
+<p>automatic retries on write failures</p>
+</li></ul>
+</li></ul>
+</li><li>
+<p><code>influxdb-client-apis</code></p>
+<ul><li>
+<p>provides all other InfluxDB 2.0 APIs for managing</p>
+<ul><li>
+<p>buckets</p>
+</li><li>
+<p>labels</p>
+</li><li>
+<p>authorizations</p>
+</li><li>
+<p>…</p>
+</li></ul>
+</li><li>
+<p>built on top of <code>influxdb-client</code></p>
+</li></ul>
+</li></ul>
+
+<h2 id="label-Installation">Installation</h2>
+
+<p>The InfluxDB 2 client is bundled as a gem and is hosted on <a href="https://rubygems.org/gems/influxdb-client">Rubygems</a>.</p>
+
+<h3 id="label-Install+the+Gem">Install the Gem</h3>
+
+<p>The client can be installed manually or with bundler.</p>
+
+<p>To install the client gem manually:</p>
+
+<pre class="code ruby"><code class="ruby">gem install influxdb-client -v 1.16.0
+</code></pre>
+
+<p>For management API:</p>
+
+<pre class="code ruby"><code class="ruby">gem install influxdb-client-apis -v 1.16.0
+</code></pre>
+
+<h2 id="label-Usage">Usage</h2>
+
+<h3 id="label-Creating+a+client">Creating a client</h3>
+
+<p>Use <strong>InfluxDB::Client</strong> to create a client connected to a running InfluxDB 2 instance.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_client'>client</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/Client.html" title="InfluxDB2::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="InfluxDB2/Client.html#initialize-instance_method" title="InfluxDB2::Client#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://localhost:8086</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-token</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+</code></pre>
+
+<h4 id="label-Client+Options">Client Options</h4>
+
+<p>| Option | Description | Type | Default | |—|—|—|—| | bucket | Default destination bucket for writes | String | none | | org | Default organization bucket for writes | String | none | | precision | Default precision for the unix timestamps within the body line-protocol | String | none | | open_timeout | Number of seconds to wait for the connection to open | Integer | 10 | | write_timeout | Number of seconds to wait for one block of data to be written | Integer | 10 | | read_timeout | Number of seconds to wait for one block of data to be read | Integer | 10 | | max_redirect_count | Maximal number of followed HTTP redirects | Integer | 10 | | use_ssl | Turn on/off SSL for HTTP communication | bool | true | | verify_mode | Sets the flags for the certification verification at beginning of SSL/TLS session. | <code>OpenSSL::SSL::VERIFY_NONE</code> or <code>OpenSSL::SSL::VERIFY_PEER</code> | none |</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_client'>client</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/Client.html" title="InfluxDB2::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="InfluxDB2/Client.html#initialize-instance_method" title="InfluxDB2::Client#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://localhost:8086</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-token</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>bucket:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>org:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-org</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>precision:</span> <span class='const'><span class='object_link'><a href="InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/WritePrecision.html" title="InfluxDB2::WritePrecision (class)">WritePrecision</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/WritePrecision.html#NANOSECOND-constant" title="InfluxDB2::WritePrecision::NANOSECOND (constant)">NANOSECOND</a></span></span><span class='rparen'>)</span>
+</code></pre>
+
+<h3 id="label-Queries">Queries</h3>
+
+<p>The result retrieved by <a href="https://github.com/influxdata/influxdb-client-ruby/blob/master/lib/influxdb2/client/query_api.rb">QueryApi</a> could be formatted as a:</p>
+<ol><li>
+<p>Raw query response</p>
+</li><li>
+<p>Flux data structure: <a href="https://github.com/influxdata/influxdb-client-ruby/blob/master/lib/influxdb2/client/flux_table.rb">FluxTable, FluxColumn and FluxRecord</a></p>
+</li><li>
+<p>Stream of <a href="https://github.com/influxdata/influxdb-client-ruby/blob/master/lib/influxdb2/client/flux_table.rb">FluxRecord</a></p>
+</li></ol>
+
+<h4 id="label-Query+raw">Query raw</h4>
+
+<p>Synchronously executes the Flux query and return result as unprocessed String “`ruby client = InfluxDB2::Client.new(&#39;<a href="https://localhost:8086">localhost:8086</a>&#39;, &#39;my-token&#39;,  bucket: &#39;my-bucket&#39;,  org: &#39;my-org&#39;)</p>
+
+<p>query_api = client.create_query_api result = query_api.query_raw(query: &#39;from(bucket:“&#39; + bucket + &#39;”) |&gt; range(start: 1970-01-01T00:00:00.000000001Z) |&gt; last()&#39;) <code> #### Synchronous query Synchronously executes the Flux query and return result as a Array of [FluxTables](https://github.com/influxdata/influxdb-client-ruby/blob/master/lib/influxdb2/client/flux_table.rb) </code>ruby client = InfluxDB2::Client.new(&#39;<a href="https://localhost:8086">localhost:8086</a>&#39;, &#39;my-token&#39;,  bucket: &#39;my-bucket&#39;,  org: &#39;my-org&#39;)</p>
+
+<p>query_api = client.create_query_api result = query_api.query(query: &#39;from(bucket:“&#39; + bucket + &#39;”) |&gt; range(start: 1970-01-01T00:00:00.000000001Z) |&gt; last()&#39;) “`</p>
+
+<h4 id="label-Query+stream">Query stream</h4>
+
+<p>Synchronously executes the Flux query and return stream of <a href="https://github.com/influxdata/influxdb-client-ruby/blob/master/lib/influxdb2/client/flux_table.rb">FluxRecord</a> “`ruby client = InfluxDB2::Client.new(&#39;<a href="https://localhost:8086">localhost:8086</a>&#39;, &#39;my-token&#39;,  bucket: &#39;my-bucket&#39;,  org: &#39;my-org&#39;)</p>
+
+<p>query_api = client.create_query_api</p>
+
+<p>query = &#39;from(bucket: “my-bucket”) |&gt; range(start: -10m, stop: now()) &#39; \  “|&gt; filter(fn: ® =&gt; r._measurement == &quot;#measurement&quot;)”</p>
+
+<p>query_api.query_stream(query: query).each do |record|  puts record.to_s end “`</p>
+
+<h3 id="label-Writing+data">Writing data</h3>
+
+<p>The <a href="https://github.com/influxdata/influxdb-client-ruby/blob/master/lib/influxdb2/client/write_api.rb">WriteApi</a> supports synchronous and batching writes into InfluxDB 2.0. In default api uses synchronous write. To enable batching you can use WriteOption.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_client'>client</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/Client.html" title="InfluxDB2::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="InfluxDB2/Client.html#initialize-instance_method" title="InfluxDB2::Client#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://localhost:8086</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-token</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+                              <span class='label'>bucket:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+                              <span class='label'>org:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-org</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+                              <span class='label'>precision:</span> <span class='const'><span class='object_link'><a href="InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/WritePrecision.html" title="InfluxDB2::WritePrecision (class)">WritePrecision</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/WritePrecision.html#NANOSECOND-constant" title="InfluxDB2::WritePrecision::NANOSECOND (constant)">NANOSECOND</a></span></span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_write_api'>write_api</span> <span class='op'>=</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_create_write_api'>create_write_api</span>
+<span class='id identifier rubyid_write_api'>write_api</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='label'>data:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>h2o,location=west value=33i 15</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+</code></pre>
+
+<h4 id="label-Batching">Batching</h4>
+
+<p>The writes are processed in batches which are configurable by <code>WriteOptions</code>:</p>
+
+<p>| Property | Description | Default Value | | — | — | — | | batchSize | the number of data point to collect in batch | 1_000 | | flush_interval | the number of milliseconds before the batch is written | 1_000 | | retry_interval | the number of milliseconds to retry unsuccessful write. The retry interval is used when the InfluxDB server does not specify “Retry-After” header. | 5_000 | | jitter_interval | the number of milliseconds to increase the batch flush interval by a random amount | 0 | | max_retries | the number of max retries when write fails | 5 | | max_retry_delay | maximum delay when retrying write in milliseconds | 125_000 | | max_retry_time | maximum total retry timeout in milliseconds | 180_000 | | exponential_base | the base for the exponential retry delay, the next delay is computed using random exponential backoff as a random value within the interval <code>retry_interval * exponential_base^(attempts-1)</code> and <code>retry_interval * exponential_base^(attempts)</code>. Example for <code>retry_interval=5000, exponential_base=2, max_retry_delay=125000, total=5</code> Retry delays are random distributed values within the ranges of <code>[5000-10000, 10000-20000, 20000-40000, 40000-80000, 80000-125000]</code> | 2 | | batch_abort_on_exception | the batching worker will be aborted after failed retry strategy | false | “`ruby write_options = InfluxDB2::WriteOptions.new(write_type: InfluxDB2::WriteType::BATCHING,  batch_size: 10, flush_interval: 5_000,  max_retries: 3, max_retry_delay: 15_000,  exponential_base: 2) client = InfluxDB2::Client.new(&#39;<a href="http://localhost:8086">localhost:8086</a>&#39;,  &#39;my-token&#39;,  bucket: &#39;my-bucket&#39;,  org: &#39;my-org&#39;,  precision: InfluxDB2::WritePrecision::NANOSECOND,  use_ssl: false)</p>
+
+<p>write_api = client.create_write_api(write_options: write_options) write_api.write(data: &#39;h2o,location=west value=33i 15&#39;) “`</p>
+
+<h4 id="label-Time+precision">Time precision</h4>
+
+<p>Configure default time precision: <code>ruby client = InfluxDB2::Client.new(&#39;https://localhost:8086&#39;, &#39;my-token&#39;,                               bucket: &#39;my-bucket&#39;,                               org: &#39;my-org&#39;,                               precision: InfluxDB2::WritePrecision::NANOSECOND) </code></p>
+
+<p>Configure precision per write: “`ruby client = InfluxDB2::Client.new(&#39;<a href="https://localhost:8086">localhost:8086</a>&#39;, &#39;my-token&#39;,  bucket: &#39;my-bucket&#39;,  org: &#39;my-org&#39;)</p>
+
+<p>write_api = client.create_write_api write_api.write(data: &#39;h2o,location=west value=33i 15&#39;, precision: InfluxDB2::WritePrecision::SECOND) “<code> Allowed values for precision are: -</code>InfluxDB2::WritePrecision::NANOSECOND<code>for nanosecond -</code>InfluxDB2::WritePrecision::MICROSECOND<code>for microsecond -</code>InfluxDB2::WritePrecision::MILLISECOND<code>for millisecond -</code>InfluxDB2::WritePrecision::SECOND` for second</p>
+
+<h4 id="label-Configure+destination">Configure destination</h4>
+
+<p>Default <code>bucket</code> and <code>organization</code> destination are configured via <code>InfluxDB::Client</code>: <code>ruby client = InfluxDB2::Client.new(&#39;https://localhost:8086&#39;, &#39;my-token&#39;,                               bucket: &#39;my-bucket&#39;,                               org: &#39;my-org&#39;) </code></p>
+
+<p>but there is also possibility to override configuration per write:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_client'>client</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/Client.html" title="InfluxDB2::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="InfluxDB2/Client.html#initialize-instance_method" title="InfluxDB2::Client#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://localhost:8086</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-token</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_write_api'>write_api</span> <span class='op'>=</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_create_write_api'>create_write_api</span>
+<span class='id identifier rubyid_write_api'>write_api</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='label'>data:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>h2o,location=west value=33i 15</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>bucket:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>production-data</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>org:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>customer-1</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+</code></pre>
+
+<h4 id="label-Data+format">Data format</h4>
+
+<p>The data could be written as:</p>
+<ol><li>
+<p><code>String</code> that is formatted as a InfluxDB&#39;s line protocol</p>
+</li><li>
+<p><code>Hash</code> with keys: name, tags, fields and time</p>
+</li><li>
+<p><a href="https://github.com/influxdata/influxdb-client-ruby/blob/master/lib/influxdb2/client/point.rb#L28">Data Point</a> structure</p>
+</li><li>
+<p><code>Array</code> of above items</p>
+</li></ol>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_client'>client</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/Client.html" title="InfluxDB2::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="InfluxDB2/Client.html#initialize-instance_method" title="InfluxDB2::Client#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://localhost:8086</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-token</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+                              <span class='label'>bucket:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+                              <span class='label'>org:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-org</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+                              <span class='label'>precision:</span> <span class='const'><span class='object_link'><a href="InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/WritePrecision.html" title="InfluxDB2::WritePrecision (class)">WritePrecision</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/WritePrecision.html#NANOSECOND-constant" title="InfluxDB2::WritePrecision::NANOSECOND (constant)">NANOSECOND</a></span></span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/Point.html" title="InfluxDB2::Point (class)">Point</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="InfluxDB2/Point.html#initialize-instance_method" title="InfluxDB2::Point#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>h2o</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+                       <span class='period'>.</span><span class='id identifier rubyid_add_tag'>add_tag</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>location</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>europe</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+                       <span class='period'>.</span><span class='id identifier rubyid_add_field'>add_field</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>level</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_hash'>hash</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>h2o</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+         <span class='label'>tags:</span> <span class='lbrace'>{</span> <span class='label'>host:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>aws</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>region:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>us</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='comma'>,</span>
+         <span class='label'>fields:</span> <span class='lbrace'>{</span> <span class='label'>level:</span> <span class='int'>5</span><span class='comma'>,</span> <span class='label'>saturation:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>99%</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>time:</span> <span class='int'>123</span> <span class='rbrace'>}</span>
+
+<span class='id identifier rubyid_write_api'>write_api</span> <span class='op'>=</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_create_write_api'>create_write_api</span>
+<span class='id identifier rubyid_write_api'>write_api</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='label'>data:</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>h2o,location=west value=33i 15</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_point'>point</span><span class='comma'>,</span> <span class='id identifier rubyid_hash'>hash</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+</code></pre>
+
+<h4 id="label-Default+Tags">Default Tags</h4>
+
+<p>Sometimes is useful to store same information in every measurement e.g. <code>hostname</code>, <code>location</code>, <code>customer</code>. The client is able to use static value, app settings or env variable as a tag value.</p>
+
+<p>The expressions: - <code>California Miner</code> - static value - <code>${env.hostname}</code> - environment property</p>
+
+<h5 id="label-Via+API">Via API</h5>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_client'>client</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/Client.html" title="InfluxDB2::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="InfluxDB2/Client.html#initialize-instance_method" title="InfluxDB2::Client#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>http://localhost:8086</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-token</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+                               <span class='label'>bucket:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+                               <span class='label'>org:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-org</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+                               <span class='label'>precision:</span> <span class='const'><span class='object_link'><a href="InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/WritePrecision.html" title="InfluxDB2::WritePrecision (class)">WritePrecision</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/WritePrecision.html#NANOSECOND-constant" title="InfluxDB2::WritePrecision::NANOSECOND (constant)">NANOSECOND</a></span></span><span class='comma'>,</span>
+                               <span class='label'>use_ssl:</span> <span class='kw'>false</span><span class='comma'>,</span>
+                               <span class='label'>tags:</span> <span class='lbrace'>{</span> <span class='label'>id:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>132-987-655</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_point_settings'>point_settings</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/PointSettings.html" title="InfluxDB2::PointSettings (class)">PointSettings</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="InfluxDB2/PointSettings.html#initialize-instance_method" title="InfluxDB2::PointSettings#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>default_tags:</span> <span class='lbrace'>{</span> <span class='label'>customer:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>California Miner</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point_settings'>point_settings</span><span class='period'>.</span><span class='id identifier rubyid_add_default_tag'>add_default_tag</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>data_center</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>${env.data_center}</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_write_api'>write_api</span> <span class='op'>=</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_create_write_api'>create_write_api</span><span class='lparen'>(</span><span class='label'>write_options:</span> <span class='const'><span class='object_link'><a href="InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2.html#SYNCHRONOUS-constant" title="InfluxDB2::SYNCHRONOUS (constant)">SYNCHRONOUS</a></span></span><span class='comma'>,</span>
+                                    <span class='label'>point_settings:</span> <span class='id identifier rubyid_point_settings'>point_settings</span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_write_api'>write_api</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='label'>data:</span> <span class='const'><span class='object_link'><a href="InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/Point.html" title="InfluxDB2::Point (class)">Point</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="InfluxDB2/Point.html#initialize-instance_method" title="InfluxDB2::Point#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>h2o</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+                                      <span class='period'>.</span><span class='id identifier rubyid_add_tag'>add_tag</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>location</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>europe</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+                                      <span class='period'>.</span><span class='id identifier rubyid_add_field'>add_field</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>level</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span><span class='rparen'>)</span>
+</code></pre>
+
+<h3 id="label-Delete+data">Delete data</h3>
+
+<p>The <a href="https://github.com/influxdata/influxdb-client-ruby/blob/master/lib/influxdb2/client/delete_api.rb">DeleteApi</a> supports deletes <a href="https://v2.docs.influxdata.com/v2.0/reference/glossary/#point">points</a> from an InfluxDB bucket.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_client'>client</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/Client.html" title="InfluxDB2::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="InfluxDB2/Client.html#initialize-instance_method" title="InfluxDB2::Client#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>http://localhost:8086</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-token</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+                               <span class='label'>bucket:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+                               <span class='label'>org:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-org</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+                               <span class='label'>precision:</span> <span class='const'><span class='object_link'><a href="InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/WritePrecision.html" title="InfluxDB2::WritePrecision (class)">WritePrecision</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/WritePrecision.html#NANOSECOND-constant" title="InfluxDB2::WritePrecision::NANOSECOND (constant)">NANOSECOND</a></span></span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_create_delete_api'>create_delete_api</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='const'>DateTime</span><span class='period'>.</span><span class='id identifier rubyid_rfc3339'>rfc3339</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>2019-02-03T04:05:06+07:00</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+                                <span class='const'>DateTime</span><span class='period'>.</span><span class='id identifier rubyid_rfc3339'>rfc3339</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>2019-03-03T04:05:06+07:00</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+                                <span class='label'>predicate:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>key1=&quot;value1&quot; AND key2=&quot;value&quot;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+</code></pre>
+
+<p>The time range could be specified as:</p>
+<ol><li>
+<p>String - <code>&quot;2019-02-03T04:05:06+07:00&quot;</code></p>
+</li><li>
+<p>DateTime - <code>DateTime.rfc3339(&#39;2019-03-03T04:05:06+07:00&#39;)</code></p>
+</li><li>
+<p>Time - <code>Time.utc(2015, 10, 16, 8, 20, 15)</code></p>
+</li></ol>
+
+<h3 id="label-Management+API">Management API</h3>
+
+<p>The client supports following management API:</p>
+
+<p>| | API docs | | — | — | | <a href="https://influxdata.github.io/influxdb-client-ruby/InfluxDB2/API/AuthorizationsApi.html">AuthorizationsApi</a> | <a href="https://docs.influxdata.com/influxdb/v2.0/api/#tag/Authorizations">docs.influxdata.com/influxdb/v2.0/api/#tag/Authorizations</a> | | <a href="https://influxdata.github.io/influxdb-client-ruby/InfluxDB2/API/BucketsApi.html">BucketsApi</a> | <a href="https://docs.influxdata.com/influxdb/v2.0/api/#tag/Buckets">docs.influxdata.com/influxdb/v2.0/api/#tag/Buckets</a> | | <a href="https://influxdata.github.io/influxdb-client-ruby/InfluxDB2/API/LabelsApi.html">LabelsApi</a> | <a href="https://docs.influxdata.com/influxdb/v2.0/api/#tag/Labels">docs.influxdata.com/influxdb/v2.0/api/#tag/Labels</a> | | <a href="https://influxdata.github.io/influxdb-client-ruby/InfluxDB2/API/OrganizationsApi.html">OrganizationsApi</a> | <a href="https://docs.influxdata.com/influxdb/v2.0/api/#tag/Organizations">docs.influxdata.com/influxdb/v2.0/api/#tag/Organizations</a> | | <a href="https://influxdata.github.io/influxdb-client-ruby/InfluxDB2/API/UsersApi.html">UsersApi</a> | <a href="https://docs.influxdata.com/influxdb/v2.0/api/#tag/Users">docs.influxdata.com/influxdb/v2.0/api/#tag/Users</a> |</p>
+
+<p>The following example demonstrates how to use a InfluxDB 2.0 Management API to create new bucket. For further information see docs and <a href="/examples">examples</a>.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='comment'>#
+</span><span class='comment'># This is an example how to create new bucket with permission to write.
+</span><span class='comment'>#
+</span><span class='comment'># You could run example via: `cd apis &amp;&amp; bundle exec ruby ../examples/create_new_bucket.rb`
+</span><span class='comment'>#
+</span><span class='gvar'>$LOAD_PATH</span><span class='period'>.</span><span class='id identifier rubyid_unshift'>unshift</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_expand_path'>expand_path</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>../lib</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid___dir__'>__dir__</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>influxdb-client</span><span class='tstring_end'>&#39;</span></span>
+<span class='gvar'>$LOAD_PATH</span><span class='period'>.</span><span class='id identifier rubyid_unshift'>unshift</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_expand_path'>expand_path</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>../apis/lib</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid___dir__'>__dir__</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>influxdb-client-apis</span><span class='tstring_end'>&#39;</span></span>
+
+<span class='id identifier rubyid_url'>url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>http://localhost:8086</span><span class='tstring_end'>&#39;</span></span>
+<span class='id identifier rubyid_bucket'>bucket</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-bucket</span><span class='tstring_end'>&#39;</span></span>
+<span class='id identifier rubyid_org'>org</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-org</span><span class='tstring_end'>&#39;</span></span>
+<span class='id identifier rubyid_token'>token</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-token</span><span class='tstring_end'>&#39;</span></span>
+
+<span class='id identifier rubyid_client'>client</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/Client.html" title="InfluxDB2::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="InfluxDB2/Client.html#initialize-instance_method" title="InfluxDB2::Client#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_url'>url</span><span class='comma'>,</span>
+                               <span class='id identifier rubyid_token'>token</span><span class='comma'>,</span>
+                               <span class='label'>bucket:</span> <span class='id identifier rubyid_bucket'>bucket</span><span class='comma'>,</span>
+                               <span class='label'>org:</span> <span class='id identifier rubyid_org'>org</span><span class='comma'>,</span>
+                               <span class='label'>use_ssl:</span> <span class='kw'>false</span><span class='comma'>,</span>
+                               <span class='label'>precision:</span> <span class='const'><span class='object_link'><a href="InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/WritePrecision.html" title="InfluxDB2::WritePrecision (class)">WritePrecision</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/WritePrecision.html#NANOSECOND-constant" title="InfluxDB2::WritePrecision::NANOSECOND (constant)">NANOSECOND</a></span></span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_api'>api</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/API.html" title="InfluxDB2::API (module)">API</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/API/Client.html" title="InfluxDB2::API::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="InfluxDB2/API/Client.html#initialize-instance_method" title="InfluxDB2::API::Client#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_client'>client</span><span class='rparen'>)</span>
+
+<span class='comment'># Find my organization
+</span><span class='id identifier rubyid_organization'>organization</span> <span class='op'>=</span> <span class='id identifier rubyid_api'>api</span><span class='period'>.</span><span class='id identifier rubyid_create_organizations_api'>create_organizations_api</span>
+                  <span class='period'>.</span><span class='id identifier rubyid_get_orgs'>get_orgs</span>
+                  <span class='period'>.</span><span class='id identifier rubyid_orgs'>orgs</span>
+                  <span class='period'>.</span><span class='id identifier rubyid_select'>select</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_it'>it</span><span class='op'>|</span> <span class='id identifier rubyid_it'>it</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-org</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span>
+                  <span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
+
+<span class='comment'>#
+</span><span class='comment'># Create new Bucket
+</span><span class='comment'>#
+</span><span class='id identifier rubyid_retention_rule'>retention_rule</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/API.html" title="InfluxDB2::API (module)">API</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/API/RetentionRule.html" title="InfluxDB2::API::RetentionRule (class)">RetentionRule</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="InfluxDB2/API/RetentionRule.html#initialize-instance_method" title="InfluxDB2::API::RetentionRule#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>type:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>expire</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>every_seconds:</span> <span class='int'>3600</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_bucket_name'>bucket_name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>new-bucket-name</span><span class='tstring_end'>&#39;</span></span>
+<span class='id identifier rubyid_request'>request</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/API.html" title="InfluxDB2::API (module)">API</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/API/PostBucketRequest.html" title="InfluxDB2::API::PostBucketRequest (class)">PostBucketRequest</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="InfluxDB2/API/PostBucketRequest.html#initialize-instance_method" title="InfluxDB2::API::PostBucketRequest#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>org_id:</span> <span class='id identifier rubyid_organization'>organization</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span>
+                                                <span class='label'>name:</span> <span class='id identifier rubyid_bucket_name'>bucket_name</span><span class='comma'>,</span>
+                                                <span class='label'>retention_rules:</span> <span class='lbracket'>[</span><span class='id identifier rubyid_retention_rule'>retention_rule</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_bucket'>bucket</span> <span class='op'>=</span> <span class='id identifier rubyid_api'>api</span><span class='period'>.</span><span class='id identifier rubyid_create_buckets_api'>create_buckets_api</span>
+            <span class='period'>.</span><span class='id identifier rubyid_post_buckets'>post_buckets</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='rparen'>)</span>
+
+<span class='comment'>#
+</span><span class='comment'># Create Permission to read/write from Bucket
+</span><span class='comment'>#
+</span><span class='id identifier rubyid_resource'>resource</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/API.html" title="InfluxDB2::API (module)">API</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/API/Resource.html" title="InfluxDB2::API::Resource (class)">Resource</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="InfluxDB2/API/Resource.html#initialize-instance_method" title="InfluxDB2::API::Resource#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>type:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>buckets</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+                                        <span class='label'>id:</span> <span class='id identifier rubyid_bucket'>bucket</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span>
+                                        <span class='label'>org_id:</span> <span class='id identifier rubyid_organization'>organization</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_authorization'>authorization</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/API.html" title="InfluxDB2::API (module)">API</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/API/Authorization.html" title="InfluxDB2::API::Authorization (class)">Authorization</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="InfluxDB2/API/Authorization.html#initialize-instance_method" title="InfluxDB2::API::Authorization#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>description:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Authorization to read/write bucket: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_bucket'>bucket</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                                                  <span class='label'>org_id:</span> <span class='id identifier rubyid_organization'>organization</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span>
+                                                  <span class='label'>permissions:</span> <span class='lbracket'>[</span>
+                                                    <span class='const'><span class='object_link'><a href="InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/API.html" title="InfluxDB2::API (module)">API</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/API/Permission.html" title="InfluxDB2::API::Permission (class)">Permission</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="InfluxDB2/API/Permission.html#initialize-instance_method" title="InfluxDB2::API::Permission#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>action:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>read</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>resource:</span> <span class='id identifier rubyid_resource'>resource</span><span class='rparen'>)</span><span class='comma'>,</span>
+                                                    <span class='const'><span class='object_link'><a href="InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/API.html" title="InfluxDB2::API (module)">API</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InfluxDB2/API/Permission.html" title="InfluxDB2::API::Permission (class)">Permission</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="InfluxDB2/API/Permission.html#initialize-instance_method" title="InfluxDB2::API::Permission#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>action:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>write</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>resource:</span> <span class='id identifier rubyid_resource'>resource</span><span class='rparen'>)</span>
+                                                  <span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_api'>api</span><span class='period'>.</span><span class='id identifier rubyid_create_authorizations_api'>create_authorizations_api</span>
+            <span class='period'>.</span><span class='id identifier rubyid_post_authorizations'>post_authorizations</span><span class='lparen'>(</span><span class='id identifier rubyid_authorization'>authorization</span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_print'>print</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The token: &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_token'>token</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39; is authorized to read/write from/to bucket: &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_bucket'>bucket</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_close!'>close!</span>
+</code></pre>
+<ul><li>
+<p>sources - <a href="/examples/create_new_bucket.rb">create_new_bucket.rb</a></p>
+</li></ul>
+
+<h2 id="label-Advanced+Usage">Advanced Usage</h2>
+
+<h3 id="label-Check+the+server+status">Check the server status</h3>
+
+<p>Server availability can be checked using the <code>client.health</code> method. That is equivalent of the <a href="https://v2.docs.influxdata.com/v2.0/reference/cli/influx/ping/">influx ping</a>.</p>
+
+<h3 id="label-InfluxDB+1.8+API+compatibility">InfluxDB 1.8 API compatibility</h3>
+
+<p><a href="https://docs.influxdata.com/influxdb/v1.8/tools/api/#influxdb-2-0-api-compatibility-endpoints">InfluxDB 1.8.0 introduced forward compatibility APIs</a> for InfluxDB 2.0. This allow you to easily move from InfluxDB 1.x to InfluxDB 2.0 Cloud or open source.</p>
+
+<p>The following forward compatible APIs are available:</p>
+
+<p>| API | Endpoint | Description | |:———-|:———-|:———-| | <a href="lib/influxdb2/client/query_api.rb">query_api.rb</a> | <a href="https://docs.influxdata.com/influxdb/latest/tools/api/#api-v2-query-http-endpoint">/api/v2/query</a> | Query data in InfluxDB 1.8.0+ using the InfluxDB 2.0 API and <a href="https://docs.influxdata.com/flux/latest/">Flux</a> <em>(endpoint should be enabled by <a href="https://docs.influxdata.com/influxdb/latest/administration/config/#flux-enabled-false">flux-enabled option</a>)</em> | | <a href="lib/influxdb2/client/write_api.rb">write_api.rb</a> | <a href="https://docs.influxdata.com/influxdb/latest/tools/api/#api-v2-write-http-endpoint">/api/v2/write</a> | Write data to InfluxDB 1.8.0+ using the InfluxDB 2.0 API | | <a href="lib/influxdb2/client/health_api.rb">health_api.rb</a> | <a href="https://docs.influxdata.com/influxdb/latest/tools/api/#health-http-endpoint">/health</a> | Check the health of your InfluxDB instance |</p>
+
+<p>For detail info see <a href="examples/influxdb_18_example.rb">InfluxDB 1.8 example</a>.</p>
+
+<h2 id="label-Local+tests">Local tests</h2>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_brew'>brew</span> <span class='id identifier rubyid_install'>install</span> <span class='id identifier rubyid_wget'>wget</span> <span class='comment'># on a mac, if not yet installed!
+</span><span class='id identifier rubyid_bin'>bin</span><span class='op'>/</span><span class='id identifier rubyid_influxdb'>influxdb</span><span class='op'>-</span><span class='id identifier rubyid_restart'>restart</span><span class='period'>.</span><span class='id identifier rubyid_sh'>sh</span>
+<span class='id identifier rubyid_rake'>rake</span> <span class='id identifier rubyid_test'>test</span>
+</code></pre>
+
+<h2 id="label-Contributing">Contributing</h2>
+
+<p>Bug reports and pull requests are welcome on GitHub at <a href="https://github.com/influxdata/influxdb-client-ruby">github.com/influxdata/influxdb-client-ruby</a>.</p>
+
+<h2 id="label-License">License</h2>
+
+<p>The gem is available as open source under the terms of the <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
+</div></div>
+
+      <div id="footer">
+  Generated on Fri Jul  9 06:45:44 2021 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.26 (ruby-2.6.8).
+</div>
+
+    </div>
+  </body>
+</html>

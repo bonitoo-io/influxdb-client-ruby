@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: InfluxDB2::API::Client
+  
+    &mdash; Documentation by YARD 0.9.26
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "InfluxDB2::API::Client";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../API.html" title="InfluxDB2::API (module)">API</a></span></span>
+     &raquo; 
+    <span class="title">Client</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: InfluxDB2::API::Client
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">InfluxDB2::API::Client</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>apis/lib/influxdb2/apis/api.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The client is the entry point to management HTTP API defined in <a href="https://github.com/influxdata/influxdb/blob/master/http/swagger.yml">github.com/influxdata/influxdb/blob/master/http/swagger.yml</a>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#api_client-instance_method" title="#api_client (instance method)">#<strong>api_client</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute api_client.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_authorizations_api-instance_method" title="#create_authorizations_api (instance method)">#<strong>create_authorizations_api</strong>  &#x21d2; InfluxDB2::API::AuthorizationsApi </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a new instance of AuthorizationsApi.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_buckets_api-instance_method" title="#create_buckets_api (instance method)">#<strong>create_buckets_api</strong>  &#x21d2; InfluxDB2::API::BucketsApi </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a new instance of BucketsApi.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_labels_api-instance_method" title="#create_labels_api (instance method)">#<strong>create_labels_api</strong>  &#x21d2; InfluxDB2::API::LabelsApi </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a new instance of LabelsApi.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_organizations_api-instance_method" title="#create_organizations_api (instance method)">#<strong>create_organizations_api</strong>  &#x21d2; InfluxDB2::API::OrganizationsApi </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a new instance of OrganizationsApi.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_users_api-instance_method" title="#create_users_api (instance method)">#<strong>create_users_api</strong>  &#x21d2; InfluxDB2::API::UsersApi </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a new instance of UsersApi.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(client)  &#x21d2; Client </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Initialize client that providing a support for managements APIs.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(client)  &#x21d2; <tt><span class='object_link'><a href="" title="InfluxDB2::API::Client (class)">Client</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Initialize client that providing a support for managements APIs.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Instantiate a client.</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_client'>client</span> <span class='op'>=</span> <span class='const'>InfluxDBClient</span><span class='op'>::</span><span class='const'>Client</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='label'>url:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://localhost:8086</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>token:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my-token</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_api'>api</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../API.html" title="InfluxDB2::API (module)">API</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="InfluxDB2::API::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_client'>client</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>:client</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Client.html" title="InfluxDB2::Client (class)">InfluxDB2::Client</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The main InfluxDB client</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'apis/lib/influxdb2/apis/api.rb', line 34</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_client'>client</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_configuration'>configuration</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Configuration.html" title="InfluxDB2::API::Configuration (class)">Configuration</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Configuration.html#initialize-instance_method" title="InfluxDB2::API::Configuration#initialize (method)">new</a></span></span>
+
+  <span class='id identifier rubyid_uri'>uri</span> <span class='op'>=</span> <span class='const'>URI</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='comment'># base URL
+</span>  <span class='id identifier rubyid_configuration'>configuration</span><span class='period'>.</span><span class='id identifier rubyid_scheme'>scheme</span> <span class='op'>=</span> <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_scheme'>scheme</span>
+  <span class='id identifier rubyid_configuration'>configuration</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span> <span class='op'>=</span> <span class='id identifier rubyid_uri'>uri</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+  <span class='comment'># SSL
+</span>  <span class='id identifier rubyid_configuration'>configuration</span><span class='period'>.</span><span class='id identifier rubyid_verify_ssl'>verify_ssl</span> <span class='op'>=</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:use_ssl</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='kw'>true</span> <span class='op'>:</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:use_ssl</span><span class='rbracket'>]</span>
+  <span class='comment'># Token
+</span>  <span class='id identifier rubyid_configuration'>configuration</span><span class='period'>.</span><span class='id identifier rubyid_api_key_prefix'>api_key_prefix</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>api_key</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Token</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_configuration'>configuration</span><span class='period'>.</span><span class='id identifier rubyid_api_key'>api_key</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>api_key</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:token</span><span class='rbracket'>]</span>
+
+  <span class='ivar'>@api_client</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="ApiClient.html" title="InfluxDB2::API::ApiClient (class)">ApiClient</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="ApiClient.html#initialize-instance_method" title="InfluxDB2::API::ApiClient#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_configuration'>configuration</span><span class='rparen'>)</span>
+  <span class='comment'># User Agent
+</span>  <span class='ivar'>@api_client</span><span class='period'>.</span><span class='id identifier rubyid_user_agent'>user_agent</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>influxdb-client-ruby/</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="../../InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../InfluxDB2.html#VERSION-constant" title="InfluxDB2::VERSION (constant)">VERSION</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="api_client=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="api_client-instance_method">
+  
+    #<strong>api_client</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute api_client.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'apis/lib/influxdb2/apis/api.rb', line 25</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_api_client'>api_client</span>
+  <span class='ivar'>@api_client</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="create_authorizations_api-instance_method">
+  
+    #<strong>create_authorizations_api</strong>  &#x21d2; <tt><span class='object_link'><a href="AuthorizationsApi.html" title="InfluxDB2::API::AuthorizationsApi (class)">InfluxDB2::API::AuthorizationsApi</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a new instance of AuthorizationsApi.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="AuthorizationsApi.html" title="InfluxDB2::API::AuthorizationsApi (class)">InfluxDB2::API::AuthorizationsApi</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>New instance of OrganizationsApi.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+55
+56
+57</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'apis/lib/influxdb2/apis/api.rb', line 55</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create_authorizations_api'>create_authorizations_api</span>
+  <span class='const'><span class='object_link'><a href="../../InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../API.html" title="InfluxDB2::API (module)">API</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="AuthorizationsApi.html" title="InfluxDB2::API::AuthorizationsApi (class)">AuthorizationsApi</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="AuthorizationsApi.html#initialize-instance_method" title="InfluxDB2::API::AuthorizationsApi#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='ivar'>@api_client</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create_buckets_api-instance_method">
+  
+    #<strong>create_buckets_api</strong>  &#x21d2; <tt><span class='object_link'><a href="BucketsApi.html" title="InfluxDB2::API::BucketsApi (class)">InfluxDB2::API::BucketsApi</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a new instance of BucketsApi.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="BucketsApi.html" title="InfluxDB2::API::BucketsApi (class)">InfluxDB2::API::BucketsApi</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>New instance of BucketsApi.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+62
+63
+64</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'apis/lib/influxdb2/apis/api.rb', line 62</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create_buckets_api'>create_buckets_api</span>
+  <span class='const'><span class='object_link'><a href="../../InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../API.html" title="InfluxDB2::API (module)">API</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="BucketsApi.html" title="InfluxDB2::API::BucketsApi (class)">BucketsApi</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="BucketsApi.html#initialize-instance_method" title="InfluxDB2::API::BucketsApi#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='ivar'>@api_client</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create_labels_api-instance_method">
+  
+    #<strong>create_labels_api</strong>  &#x21d2; <tt><span class='object_link'><a href="LabelsApi.html" title="InfluxDB2::API::LabelsApi (class)">InfluxDB2::API::LabelsApi</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a new instance of LabelsApi.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="LabelsApi.html" title="InfluxDB2::API::LabelsApi (class)">InfluxDB2::API::LabelsApi</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>New instance of LabelsApi.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+69
+70
+71</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'apis/lib/influxdb2/apis/api.rb', line 69</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create_labels_api'>create_labels_api</span>
+  <span class='const'><span class='object_link'><a href="../../InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../API.html" title="InfluxDB2::API (module)">API</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="LabelsApi.html" title="InfluxDB2::API::LabelsApi (class)">LabelsApi</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="LabelsApi.html#initialize-instance_method" title="InfluxDB2::API::LabelsApi#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='ivar'>@api_client</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create_organizations_api-instance_method">
+  
+    #<strong>create_organizations_api</strong>  &#x21d2; <tt><span class='object_link'><a href="OrganizationsApi.html" title="InfluxDB2::API::OrganizationsApi (class)">InfluxDB2::API::OrganizationsApi</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a new instance of OrganizationsApi.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="OrganizationsApi.html" title="InfluxDB2::API::OrganizationsApi (class)">InfluxDB2::API::OrganizationsApi</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>New instance of OrganizationsApi.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+76
+77
+78</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'apis/lib/influxdb2/apis/api.rb', line 76</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create_organizations_api'>create_organizations_api</span>
+  <span class='const'><span class='object_link'><a href="../../InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../API.html" title="InfluxDB2::API (module)">API</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="OrganizationsApi.html" title="InfluxDB2::API::OrganizationsApi (class)">OrganizationsApi</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="OrganizationsApi.html#initialize-instance_method" title="InfluxDB2::API::OrganizationsApi#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='ivar'>@api_client</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create_users_api-instance_method">
+  
+    #<strong>create_users_api</strong>  &#x21d2; <tt><span class='object_link'><a href="UsersApi.html" title="InfluxDB2::API::UsersApi (class)">InfluxDB2::API::UsersApi</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a new instance of UsersApi.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="UsersApi.html" title="InfluxDB2::API::UsersApi (class)">InfluxDB2::API::UsersApi</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>New instance of UsersApi.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+83
+84
+85</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'apis/lib/influxdb2/apis/api.rb', line 83</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create_users_api'>create_users_api</span>
+  <span class='const'><span class='object_link'><a href="../../InfluxDB2.html" title="InfluxDB2 (module)">InfluxDB2</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../API.html" title="InfluxDB2::API (module)">API</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="UsersApi.html" title="InfluxDB2::API::UsersApi (class)">UsersApi</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="UsersApi.html#initialize-instance_method" title="InfluxDB2::API::UsersApi#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='ivar'>@api_client</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Fri Jul  9 06:45:46 2021 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.26 (ruby-2.6.8).
+</div>
+
+    </div>
+  </body>
+</html>
