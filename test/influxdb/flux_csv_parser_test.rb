@@ -1,4 +1,4 @@
-# The MIT License
+# The MIT
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -166,7 +166,7 @@ class FluxCsvParserTest < MiniTest::Test
       "#default,mean,,,,,,,,,,,\n" \
       ",result,table,_start,_stop,_time,_value,_field,_measurement,language,license,name,owner\n" \
       ',,0,2020-11-02T07:29:49.55050738Z,2020-12-02T07:29:49.55050738Z,2020-11-02T09:00:00Z,9,' \
-      "stars,github_repository,Ruby,MIT License,influxdb-client-ruby,influxdata\n"
+      "stars,gh,Ruby,MIT,influxdb-client-ruby,influxdata\n"
 
     tables = InfluxDB2::FluxCsvParser.new(data).parse.tables
     records = tables[0].records
@@ -463,5 +463,30 @@ class FluxCsvParserErrorTest < MiniTest::Test
     assert_equal false, tables[0].columns[1].group
     assert_equal true, tables[0].columns[2].group
     assert_equal 1, tables[1].records.size
+  end
+
+  def test_parse_infinity
+    data = '#group,false,false,true,true,true,true,true,true,true,true,false,false
+#datatype,string,long,dateTime:RFC3339,dateTime:RFC3339,string,string,string,string,string,string,double,double
+#default,_result,,,,,,,,,,,
+,result,table,_start,_stop,_field,_measurement,language,license,name,owner,le,_value
+,,0,2021-06-23T06:50:11.897825012Z,2021-06-25T06:50:11.897825012Z,stars,gh,C#,MIT,ruby,influxdata,0,0
+,,0,2021-06-23T06:50:11.897825012Z,2021-06-25T06:50:11.897825012Z,stars,gh,C#,MIT,ruby,influxdata,10,0
+,,0,2021-06-23T06:50:11.897825012Z,2021-06-25T06:50:11.897825012Z,stars,gh,C#,MIT,ruby,influxdata,20,0
+,,0,2021-06-23T06:50:11.897825012Z,2021-06-25T06:50:11.897825012Z,stars,gh,C#,MIT,ruby,influxdata,30,0
+,,0,2021-06-23T06:50:11.897825012Z,2021-06-25T06:50:11.897825012Z,stars,gh,C#,MIT,ruby,influxdata,40,0
+,,0,2021-06-23T06:50:11.897825012Z,2021-06-25T06:50:11.897825012Z,stars,gh,C#,MIT,ruby,influxdata,50,0
+,,0,2021-06-23T06:50:11.897825012Z,2021-06-25T06:50:11.897825012Z,stars,gh,C#,MIT,ruby,influxdata,60,0
+,,0,2021-06-23T06:50:11.897825012Z,2021-06-25T06:50:11.897825012Z,stars,gh,C#,MIT,ruby,influxdata,70,0
+,,0,2021-06-23T06:50:11.897825012Z,2021-06-25T06:50:11.897825012Z,stars,gh,C#,MIT,ruby,influxdata,80,0
+,,0,2021-06-23T06:50:11.897825012Z,2021-06-25T06:50:11.897825012Z,stars,gh,C#,MIT,ruby,influxdata,90,0
+,,0,2021-06-23T06:50:11.897825012Z,2021-06-25T06:50:11.897825012Z,stars,gh,C#,MIT,ruby,influxdata,+Inf,15
+,,0,2021-06-23T06:50:11.897825012Z,2021-06-25T06:50:11.897825012Z,stars,gh,C#,MIT,ruby,influxdata,-Inf,15'
+
+    tables = InfluxDB2::FluxCsvParser.new(data).parse.tables
+    assert_equal 1, tables.size
+    assert_equal 12, tables[0].records.size
+    assert_equal tables[0].records[10].values['le'], Float::INFINITY
+    assert_equal tables[0].records[11].values['le'], -Float::INFINITY
   end
 end

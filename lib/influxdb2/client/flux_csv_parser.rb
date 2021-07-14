@@ -240,7 +240,14 @@ module InfluxDB2
       when 'unsignedLong', 'long', 'duration'
         str_val.to_i
       when 'double'
-        str_val.to_f
+        case str_val
+        when '+Inf'
+          Float::INFINITY
+        when '-Inf'
+          -Float::INFINITY
+        else
+          str_val.to_f
+        end
       when 'base64Binary'
         Base64.decode64(str_val)
       when 'dateTime:RFC3339', 'dateTime:RFC3339Nano'

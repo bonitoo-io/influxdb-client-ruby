@@ -1,5 +1,8 @@
 ## 1.17.0 [unreleased]
 
+### Bug Fixes
+1. [#87](https://github.com/influxdata/influxdb-client-ruby/pull/87): Parsing infinite numbers
+
 ## 1.16.0 [2021-07-09]
 
 ### Bug Fixes
